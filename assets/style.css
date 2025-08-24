@@ -114,3 +114,6 @@ textarea{min-height:140px}
 
 /* Garante que conteúdo do card não encoste nas bordas e tenha espaçamento vertical */
 .card .body{ gap: 10px; }
+
+/* Observações título sem estilo inline */
+.observacoes-heading{margin-top:24px;}
