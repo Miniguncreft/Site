@@ -1,6 +1,9 @@
 
-// Configurações
+// Configurações de contato
 const WHATSAPP_NUM = "5533984011050";
+const TEL1 = "(33) 9 8401-1050";
+const TEL2 = "(33) 3331-1050";
+const ENDERECO = "Av José Augusto Pereira, 47 - Pouso Alegre, Manhuaçu-MG";
 
 // Catálogo de equipamentos
 const CATALOGO = [
@@ -90,7 +93,7 @@ function enviarContato(ev){
   return false;
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
+  document.addEventListener('DOMContentLoaded', ()=>{
   if(document.getElementById('lista')){
     renderCatalogo(CATALOGO);
     document.getElementById('fCategoria')?.addEventListener('change', filtrar);
@@ -101,5 +104,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
       filtrar();
     });
   }
-  preencherItemOrcamento();
-});
+    preencherItemOrcamento();
+    // Atualiza links e textos de contato
+    document.querySelectorAll('.whatsapp-link').forEach(el=>{
+      el.href = `https://wa.me/${WHATSAPP_NUM}`;
+    });
+    document.querySelectorAll('.tel1').forEach(el=>{ el.textContent = TEL1; });
+    document.querySelectorAll('.tel2').forEach(el=>{ el.textContent = TEL2; });
+    document.querySelectorAll('.endereco').forEach(el=>{ el.textContent = ENDERECO; });
+  });
